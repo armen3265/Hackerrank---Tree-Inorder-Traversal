@@ -50,21 +50,21 @@ class Node {
 
 */
 
-    void inOrder(Node * root) {
-        queue<Node> nodes;
-        nodes.push(*root);
+        void inOrder(Node * root) {
+        queue<Node*> nodes;
+        nodes.push(root);
         while (!nodes.empty())
         {
             auto t = nodes.front();
             nodes.pop();
-            if (t.left)
+            if (t->left)
             {
-                inOrder(t.left);
+                inOrder(t->left);
             }
-            std::cout << t.data << " ";
-            if (t.right)
+            std::cout << t->data << " ";
+            if (t->right)
             {
-                nodes.push(*t.right);
+                nodes.push(t->right);
             }
         }
 
